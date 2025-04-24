@@ -1,0 +1,41 @@
+# ---------------------------
+# Angular (Front-end)
+# ---------------------------
+**/node_modules/
+**/dist/
+**/build/
+**/.angular/
+**/.env
+
+# IDE
+.vscode/
+.idea/
+
+# ---------------------------
+# .NET (Back-end)
+# ---------------------------
+**/bin/
+**/obj/
+*.user
+*.suo
+*.cache
+*.pdb
+*.mdb
+*.log
+
+# Configs locais
+**/appsettings.Development.json
+**/appsettings.Local.json
+.env
+.env.*
+
+# Rider
+**/.idea/
+**/.vs/
+**/.vscode/
+
+# ---------------------------
+# Sistema
+# ---------------------------
+.DS_Store
+Thumbs.db
