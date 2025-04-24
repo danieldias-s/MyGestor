@@ -1,0 +1,33 @@
+.layout {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f5f7fa;
+    overflow-y: auto;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+  
+  .titulo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+  }
+  

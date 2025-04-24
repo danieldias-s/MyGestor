@@ -1,0 +1,37 @@
+.home-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .resumo, .atalhos {
+    margin-top: 2rem;
+  }
+  
+  button {
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #471aa0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #351478;
+  }
+  
+  .pedidos-recentes {
+    margin-top: 1.5rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  

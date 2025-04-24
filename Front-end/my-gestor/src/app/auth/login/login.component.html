@@ -1,0 +1,22 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Login</h2>
+    <p>Digite os seus dados de acesso no campo abaixo.</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label for="email">E-mail</label>
+      <input id="email" formControlName="email" type="email" placeholder="Digite seu e-mail" />
+
+      <label for="senha">Senha</label>
+      <input id="senha" formControlName="senha" type="password" placeholder="Digite sua senha" />
+
+      <a href="#" class="forgot-password">Esqueci minha senha</a>
+
+      <button type="submit">Acessar</button>
+
+      <div *ngIf="erroLogin" class="error">
+        Email ou senha inválidos.
+      </div>
+    </form>
+  </div>
+</div>

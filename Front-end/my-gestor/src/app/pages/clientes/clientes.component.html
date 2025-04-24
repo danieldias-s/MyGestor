@@ -1,0 +1,39 @@
+<div class="clientes-container">
+  <div class="clientes-header">
+    <h1 class="page-title">Lista de Clientes</h1>
+    <button class="btn novo-cliente" (click)="novoCliente()">➕ Novo Cliente</button>
+  </div>
+
+  <div class="clientes-actions">
+    <input
+      type="text"
+      [(ngModel)]="filtro"
+      placeholder="Buscar por nome ou email..."
+      class="input-busca"
+    />
+  </div>
+
+  <div class="table-responsive">
+    <table class="clientes-table">
+      <thead>
+        <tr>
+          <th>👤 Nome</th>
+          <th>📧 Email</th>
+          <th>📞 Telefone</th>
+          <th>⚙️ Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes | filtroCliente:filtro">
+          <td>{{ cliente.nome }}</td>
+          <td>{{ cliente.email }}</td>
+          <td>{{ cliente.telefone }}</td>
+          <td class="actions-cell">
+            <button class="btn btn-editar" (click)="editarCliente(cliente.id)">📝 Editar</button>
+            <button class="btn btn-excluir" (click)="deletarCliente(cliente.id)">🗑️ Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

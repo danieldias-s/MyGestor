@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>{{ clienteId ? 'Editar Cliente' : 'Novo Cliente' }}</h2>
+
+  <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+    <label for="nome">Nome</label>
+    <input
+      id="nome"
+      formControlName="nome"
+      type="text"
+      [class.invalid]="clienteForm.get('nome')?.invalid && clienteForm.get('nome')?.touched"
+    />
+    <div *ngIf="clienteForm.get('nome')?.invalid && clienteForm.get('nome')?.touched" class="error-message">
+      O nome é obrigatório.
+    </div>
+
+    <label for="email">Email</label>
+    <input
+      id="email"
+      formControlName="email"
+      type="email"
+      [class.invalid]="clienteForm.get('email')?.invalid && clienteForm.get('email')?.touched"
+    />
+    <div *ngIf="clienteForm.get('email')?.invalid && clienteForm.get('email')?.touched" class="error-message">
+      Email inválido.
+    </div>
+
+    <label for="telefone">Telefone</label>
+    <input
+      id="telefone"
+      formControlName="telefone"
+      type="text"
+      [class.invalid]="clienteForm.get('telefone')?.invalid && clienteForm.get('telefone')?.touched"
+    />
+    <div *ngIf="clienteForm.get('telefone')?.invalid && clienteForm.get('telefone')?.touched" class="error-message">
+      O telefone é obrigatório.
+    </div>
+    <div class="actions">
+      <button type="submit" [disabled]="clienteForm.invalid">Salvar</button>
+      <button type="button" (click)="voltar()" class="btn-voltar">Voltar</button>
+    </div>
+    
+  </form>
+  
+</div>

@@ -1,0 +1,41 @@
+<div class="relatorio-page">
+  <h1 class="titulo">Relatório de Pedidos</h1>
+
+  <form class="formulario" (ngSubmit)="buscarRelatorio()">
+    <div class="campo-form">
+      <label for="ano">Ano:</label>
+      <input id="ano" type="number" [(ngModel)]="ano" name="ano" required>
+    </div>
+    <div class="campo-form">
+      <label for="mes">Mês:</label>
+      <input id="mes" type="number" min="1" max="12" [(ngModel)]="mes" name="mes" required>
+    </div>
+    <div class="botoes-exportar">
+      <button class="btn-buscar" type="submit">Buscar</button>
+      <button class="btn-buscar" type="button" (click)="exportarExcel()">Exportar Excel</button>
+      <button class="btn-buscar" type="button" (click)="exportarPDF()">Exportar PDF</button>
+    </div>
+    
+    
+  </form>
+  
+
+  <div *ngIf="resultados.length" class="tabela-container">
+    <table class="tabela-relatorio">
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Data</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of resultados">
+          <td>{{ item.clienteNome  }}</td>
+          <td>{{ item.dataPedido | date: 'short' }}</td>
+          <td>{{ item.total | currency:'BRL' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

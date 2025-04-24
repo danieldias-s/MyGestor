@@ -1,0 +1,120 @@
+/* Container principal */
+.usuarios-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #f3f4f6;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.usuarios-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* Formulário */
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.formulario input,
+.formulario select {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.formulario button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario button[type="submit"] {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.formulario button[type="submit"]:hover {
+  background-color: #2563eb;
+}
+
+.formulario button[type="button"] {
+  background-color: #9ca3af;
+  color: white;
+}
+
+.formulario button[type="button"]:hover {
+  background-color: #6b7280;
+}
+
+/* Tabela */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tabela thead {
+  background-color: #e5e7eb;
+}
+
+.tabela th,
+.tabela td {
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabela tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.tabela td button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabela td button:first-child {
+  background-color: #facc15;
+  color: #1f2937;
+}
+
+.tabela td button:first-child:hover {
+  background-color: #eab308;
+}
+
+.tabela td button:last-child {
+  background-color: #ef4444;
+  color: white;
+}
+
+.tabela td button:last-child:hover {
+  background-color: #dc2626;
+}

@@ -1,0 +1,40 @@
+<div class="produtos-container">
+  <div class="produtos-header">
+    <h2>📦 Produtos</h2>
+    <form [formGroup]="form" (ngSubmit)="salvar()" class="formulario">
+      <input formControlName="nome" placeholder="Nome" />
+      <input formControlName="preco" type="number" placeholder="Preço" />
+      <input formControlName="estoque" type="number" placeholder="Estoque" />
+      <button type="submit" class="btn-adicionar">
+        {{ editando ? 'Atualizar' : 'Adicionar' }}
+      </button>
+      <button type="button" (click)="cancelar()" *ngIf="editando" class="btn-cancelar">
+        Cancelar
+      </button>
+    </form>
+  </div>
+
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>📛 Nome</th>
+          <th>💲 Preço</th>
+          <th>📦 Estoque</th>
+          <th>⚙️ Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produto of produtos">
+          <td>{{ produto.nome }}</td>
+          <td>{{ produto.preco | currency:'BRL' }}</td>
+          <td>{{ produto.estoque }}</td>
+          <td>
+            <button class="btn-editar" (click)="editar(produto)">✏️ Editar</button>
+            <button class="btn-excluir" (click)="excluir(produto.id)">🗑️ Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

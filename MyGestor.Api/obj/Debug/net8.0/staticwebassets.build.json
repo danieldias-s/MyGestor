@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "OK/+JIntW0Hr4iGV15qOpVyhhX+JgTCN80w8oyUcmos=",
+  "Source": "MyGestor.Api",
+  "BasePath": "_content/MyGestor.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

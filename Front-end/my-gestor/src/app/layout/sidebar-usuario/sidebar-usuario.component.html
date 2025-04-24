@@ -1,0 +1,19 @@
+<div class="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <h2>My Gestão</h2>
+    </div>
+  
+    <nav class="menu">
+      <a 
+        *ngFor="let item of menuItems" 
+        (click)="onMenuClick(item)"
+        routerLinkActive="active"
+        class="menu-item"
+      >
+        <span class="icon">{{ item.icon }}</span>
+        <span class="label">{{ item.label }}</span>
+      </a>
+    </nav>
+  </div>
+  

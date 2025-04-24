@@ -1,0 +1,25 @@
+<div class="home-container">
+    <h2>Bem-vindo(a), {{ nomeUsuario }}!</h2>
+    <p><strong>Email:</strong> {{ emailUsuario }}</p>
+  
+    <div class="resumo">
+      <p><strong>Total de pedidos:</strong> {{ totalPedidos }}</p>
+    </div>
+  
+    <div class="pedidos-recentes" *ngIf="ultimosPedidos.length">
+      <h3>Últimos pedidos</h3>
+      <ul>
+        <li *ngFor="let pedido of ultimosPedidos">
+          Pedido #{{ pedido.id }} - {{ pedido.data | date:'shortDate' }}
+        </li>
+      </ul>
+    </div>
+  
+    <div class="atalhos">
+      <button routerLink="/pedidos">Ver todos os pedidos</button>
+      <button routerLink="/clientes">Cadastrar cliente</button>
+      <button routerLink="/produtos">Ver produtos</button>
+      <button routerLink="/perfil">Editar perfil</button>
+    </div>
+  </div>
+  

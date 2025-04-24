@@ -1,0 +1,47 @@
+<div class="usuarios-container">
+  <h2>Gerenciar Usuários</h2>
+
+  <!-- Formulário -->
+  <form [formGroup]="form" (ngSubmit)="salvar()" class="formulario">
+    <input formControlName="nome" placeholder="Nome" />
+    <input formControlName="email" type="email" placeholder="Email" />
+    <!-- Adicione este campo para senha -->
+    <input formControlName="senha" type="password" placeholder="Senha" *ngIf="!editando" />
+    <select formControlName="role">
+      <option value="Admin">Admin</option>
+      <option value="Usuario">Usuário</option>
+    </select>
+
+    <div class="botoes-formulario">
+      <button type="submit">
+        {{ editando ? 'Atualizar' : 'Criar' }}
+      </button>
+      <button type="button" (click)="resetarForm()" *ngIf="editando">
+        Cancelar
+      </button>
+    </div>
+  </form>
+
+  <!-- Tabela -->
+  <table class="tabela">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.email }}</td>
+        <td class="capitalize">{{ usuario.role }}</td>
+        <td>
+          <button (click)="editar(usuario)" class="btn-editar">Editar</button>
+          <button (click)="excluir(usuario.id)" class="btn-excluir">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

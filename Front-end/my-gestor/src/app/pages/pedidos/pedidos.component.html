@@ -1,0 +1,43 @@
+<div class="pedido-container">
+  <h2>Gerenciamento de Pedidos</h2>
+
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <input type="hidden" formControlName="id">
+
+    <input type="number" formControlName="clienteId" placeholder="ID do Cliente" required>
+    <input type="text" formControlName="clienteNome" placeholder="Nome do Cliente" required>
+    <input type="date" formControlName="dataPedido" required>
+    <input type="number" formControlName="total" placeholder="Total" step="0.01" required>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-salvar">{{ editando ? 'Atualizar' : 'Salvar' }}</button>
+      <button type="button" class="btn-cancelar" (click)="cancelar()" *ngIf="editando">Cancelar</button>
+    </div>
+  </form>
+
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Data</th>
+          <th>Total</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pedido of pedidos">
+          <td>{{ pedido.id }}</td>
+          <td>{{ pedido.clienteNome }}</td>
+          <td>{{ pedido.dataPedido ? (pedido.dataPedido | date:'dd/MM/yyyy') : 'Data inválida' }}</td>
+          <td>{{ pedido.total | currency:'BRL':'symbol':'1.2-2' }}</td>
+          <td class="actions">
+            <button class="btn-editar" (click)="editar(pedido)">Editar</button>
+            <button class="btn-excluir" (click)="excluir(pedido.id)">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

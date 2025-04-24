@@ -1,0 +1,169 @@
+.dashboard-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  color: #1f1f1f;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.dashboard-container.dark-mode {
+  background-color: #1f1f1f;
+  color: #f5f5f5;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.toggle-theme {
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Animação em cascata */
+.card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Gráficos */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.4s;
+  transition: background-color 0.3s ease;
+  transform: scale(0.95); /* leve escala para suavizar */
+  transform-origin: top center;
+  min-height: 380px; /* altura mínima fixa */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard-container.dark-mode .chart-card {
+  background: #2c2c2c;
+}
+
+.chart-card h3 {
+  margin-bottom: 1rem;
+}
+
+canvas {
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+  aspect-ratio: 1.2 / 1; /* proporção ajustável (largura / altura) */
+}
+
+/* Tabela */
+.recent-orders {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: 0.6s;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-container.dark-mode .recent-orders {
+  background: #2c2c2c;
+}
+
+.recent-orders table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-orders th,
+.recent-orders td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.no-data {
+  text-align: center;
+  padding: 1rem;
+  color: #888;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (min-width: 768px) {
+  .chart-card {
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+}
