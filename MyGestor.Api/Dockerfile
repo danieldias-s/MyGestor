@@ -7,9 +7,13 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
+
 COPY . .
 
+
 WORKDIR "/src/MyGestor.Api"
+
+
 RUN dotnet restore "MyGestor.Api.csproj"
 RUN dotnet build "MyGestor.Api.csproj" -c Release -o /app/build
 
