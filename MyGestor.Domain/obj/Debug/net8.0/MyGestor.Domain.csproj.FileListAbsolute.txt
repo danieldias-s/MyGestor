@@ -9,3 +9,15 @@ D:\Projetos\MyGestor.Domain\obj\Debug\net8.0\MyGestor.Domain.dll
 D:\Projetos\MyGestor.Domain\obj\Debug\net8.0\refint\MyGestor.Domain.dll
 D:\Projetos\MyGestor.Domain\obj\Debug\net8.0\MyGestor.Domain.pdb
 D:\Projetos\MyGestor.Domain\obj\Debug\net8.0\ref\MyGestor.Domain.dll
+D:\Projetos\MyGestor\MyGestor.Domain\bin\Debug\net8.0\MyGestor.Domain.deps.json
+D:\Projetos\MyGestor\MyGestor.Domain\bin\Debug\net8.0\MyGestor.Domain.dll
+D:\Projetos\MyGestor\MyGestor.Domain\bin\Debug\net8.0\MyGestor.Domain.pdb
+D:\Projetos\MyGestor\MyGestor.Domain\obj\Debug\net8.0\MyGestor.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\MyGestor\MyGestor.Domain\obj\Debug\net8.0\MyGestor.Domain.AssemblyInfoInputs.cache
+D:\Projetos\MyGestor\MyGestor.Domain\obj\Debug\net8.0\MyGestor.Domain.AssemblyInfo.cs
+D:\Projetos\MyGestor\MyGestor.Domain\obj\Debug\net8.0\MyGestor.Domain.csproj.CoreCompileInputs.cache
+D:\Projetos\MyGestor\MyGestor.Domain\obj\Debug\net8.0\MyGestor.Domain.sourcelink.json
+D:\Projetos\MyGestor\MyGestor.Domain\obj\Debug\net8.0\MyGestor.Domain.dll
+D:\Projetos\MyGestor\MyGestor.Domain\obj\Debug\net8.0\refint\MyGestor.Domain.dll
+D:\Projetos\MyGestor\MyGestor.Domain\obj\Debug\net8.0\MyGestor.Domain.pdb
+D:\Projetos\MyGestor\MyGestor.Domain\obj\Debug\net8.0\ref\MyGestor.Domain.dll
