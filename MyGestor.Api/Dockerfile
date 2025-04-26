@@ -14,6 +14,7 @@ COPY ./MyGestor.Application/MyGestor.Application.csproj ./MyGestor.Application/
 COPY ./MyGestor.Infrastructure/MyGestor.Infrastructure.csproj ./MyGestor.Infrastructure/
 
 
+
 WORKDIR /src/MyGestor.Api
 RUN dotnet restore
 
