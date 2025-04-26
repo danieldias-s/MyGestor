@@ -5,15 +5,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
-import { BaseChartDirective } from 'ng2-charts';
-
+import { NgChartsModule } from 'ng2-charts'; 
 
 import { RoleGuard } from './guards/role.guard';
 import { AuthGuard } from './guards/auth.guard';
@@ -26,9 +23,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared/shared.module';
 import { SidebarUsuarioComponent } from './layout/sidebar-usuario/sidebar-usuario.component';
 import { InicioUsuarioComponent } from './pages/inicio-usuario/inicio-usuario.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -52,10 +46,8 @@ import { InicioUsuarioComponent } from './pages/inicio-usuario/inicio-usuario.co
     FormsModule,
     ReactiveFormsModule,
     AuthModule,
-    BaseChartDirective,
+    NgChartsModule,
     SharedModule
-    
-    
   ],
   providers: [
     AuthGuard,
