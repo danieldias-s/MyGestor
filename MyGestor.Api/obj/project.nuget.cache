@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1W1EQL//IJk=",
+  "dgSpecHash": "pWOviswjO+Y=",
   "success": true,
-  "projectFilePath": "D:\\Projetos\\MyGestor.Api\\MyGestor.Api.csproj",
+  "projectFilePath": "D:\\Projetos\\MyGestor\\MyGestor.Api\\MyGestor.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daniel\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Daniel\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

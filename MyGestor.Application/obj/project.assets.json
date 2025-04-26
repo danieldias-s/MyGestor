@@ -2682,11 +2682,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\MyGestor.Application\\MyGestor.Application.csproj",
+      "projectUniqueName": "D:\\Projetos\\MyGestor\\MyGestor.Application\\MyGestor.Application.csproj",
       "projectName": "MyGestor.Application",
-      "projectPath": "D:\\Projetos\\MyGestor.Application\\MyGestor.Application.csproj",
+      "projectPath": "D:\\Projetos\\MyGestor\\MyGestor.Application\\MyGestor.Application.csproj",
       "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "D:\\Projetos\\MyGestor.Application\\obj\\",
+      "outputPath": "D:\\Projetos\\MyGestor\\MyGestor.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2707,11 +2707,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Projetos\\MyGestor.Domain\\MyGestor.Domain.csproj": {
-              "projectPath": "D:\\Projetos\\MyGestor.Domain\\MyGestor.Domain.csproj"
+            "D:\\Projetos\\MyGestor\\MyGestor.Domain\\MyGestor.Domain.csproj": {
+              "projectPath": "D:\\Projetos\\MyGestor\\MyGestor.Domain\\MyGestor.Domain.csproj"
             },
-            "D:\\Projetos\\MyGestor.Infrastructure\\MyGestor.Infrastructure.csproj": {
-              "projectPath": "D:\\Projetos\\MyGestor.Infrastructure\\MyGestor.Infrastructure.csproj"
+            "D:\\Projetos\\MyGestor\\MyGestor.Infrastructure\\MyGestor.Infrastructure.csproj": {
+              "projectPath": "D:\\Projetos\\MyGestor\\MyGestor.Infrastructure\\MyGestor.Infrastructure.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xGtUMiodqec=",
+  "dgSpecHash": "lKRDG9PbgDE=",
   "success": true,
-  "projectFilePath": "D:\\Projetos\\MyGestor.Application\\MyGestor.Application.csproj",
+  "projectFilePath": "D:\\Projetos\\MyGestor\\MyGestor.Application\\MyGestor.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daniel\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Daniel\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
