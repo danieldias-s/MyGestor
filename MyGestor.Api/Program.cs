@@ -1,26 +1,21 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using MyGestor.Domain.Interfaces;
+using MyGestor.Application.Interfaces;
 using MyGestor.Application.Services;
+using MyGestor.Domain.Interfaces;
 using MyGestor.Infrastructure.Persistence;
 using MyGestor.Infrastructure.Repositories;
-using MyGestor.Application.Interfaces;
-using MyGestor.Application.Mappings;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Definindo o nome da política de CORS
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
-// Add services to the container.
-
-// DbContext com SQL Server
+// Configurações principais
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Injeção de dependência dos Repositories e Services
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
@@ -32,10 +27,8 @@ builder.Services.AddScoped<IPedidoService, PedidoService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
-// AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-// JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -52,7 +45,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// Authorization Policies
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy =>
@@ -61,52 +53,48 @@ builder.Services.AddAuthorization(options =>
         policy.RequireRole("Admin", "Usuario"));
 });
 
-// Configurar CORS (Render precisa aceitar qualquer origem)
+// Configura CORS dependendo do ambiente
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
         policy =>
         {
-            policy.AllowAnyOrigin() // Permite qualquer origem (necessário no Render)
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
+            if (builder.Environment.IsDevelopment())
+            {
+                policy.WithOrigins("http://localhost:4200")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod()
+                      .AllowCredentials();
+            }
+            else
+            {
+                policy.AllowAnyOrigin()
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+            }
         });
 });
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(); // Swagger é bom para testar localmente
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Forçar o uso da variável de ambiente PORT para o Render
+// Porta obrigatória no Render
 var port = Environment.GetEnvironmentVariable("PORT");
 if (port != null)
 {
     app.Urls.Add($"http://*:{port}");
 }
 
-// Middlewares
 if (app.Environment.IsDevelopment())
 {
-    // Somente exibir Swagger se estiver rodando local
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-// Usa a política de CORS
 app.UseCors(MyAllowSpecificOrigins);
-
-// (Comentado) CORS manual para localhost:4200
-// Se você quiser deixar CORS específico só pra local, pode fazer diferente
-/*
-app.Use((context, next) =>
-{
-    context.Response.Headers["Access-Control-Allow-Origin"] = "http://localhost:4200";
-    context.Response.Headers["Access-Control-Allow-Credentials"] = "true";
-    return next();
-});
-*/
 
 app.UseAuthentication();
 app.UseAuthorization();
