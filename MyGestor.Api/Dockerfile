@@ -3,16 +3,14 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 EXPOSE 80
 
-# Etapa de build
+# Etapa build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Aqui o caminho é direto
-COPY ["MyGestor.Api.csproj", "./"]
-RUN dotnet restore "./MyGestor.Api.csproj"
-
 COPY . .
-WORKDIR "/src"
+
+WORKDIR "/src/MyGestor.Api"
+RUN dotnet restore "MyGestor.Api.csproj"
 RUN dotnet build "MyGestor.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
